@@ -52,7 +52,7 @@ def encrypt(file, info):
     if file.endswith('.csv'):
         df.to_csv(f"enc_{file}", sep=";", index=False)
     elif file.endswith('.xlsx'):
-        df.to_xlsx(f"enc_{file}")
+        df.to_excel(f"enc_{file}")
     with open(f"enc_{file}.info", "w") as ff:
         for field in data:
             ff.write(field)
@@ -68,7 +68,7 @@ def decrypt(file, info):
     if file.endswith('.csv'):
         df.to_csv(f"dec_{file}", sep=";", index=False)
     elif file.endswith('.xlsx'):
-        df.to_xlsx(f"dec_{file}")
+        df.to_excel(f"dec_{file}")
     with open(f"dec_{file}.info", "w") as ff:
         for field in data[:-1]:
             ff.write(field)
